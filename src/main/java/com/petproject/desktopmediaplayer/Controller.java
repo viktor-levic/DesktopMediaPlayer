@@ -6,9 +6,10 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.FileChooser;
+import javafx.util.Duration;
 
-import javax.print.attribute.standard.MediaPrintableArea;
 import java.io.File;
+import java.util.Objects;
 
 public class Controller {
     private MediaPlayer mediaPlayer;
@@ -31,8 +32,8 @@ public class Controller {
             mediaPlayer = new MediaPlayer(media);
             mediaView.setMediaPlayer(mediaPlayer);
 
-            mediaView.setFitHeight(400);
-            mediaView.setFitWidth(350);
+            mediaView.setFitHeight(700);
+            mediaView.setFitWidth(700);
 
 
             mediaPlayer.play();
@@ -55,6 +56,19 @@ public class Controller {
     }
 
     @FXML
+    private void repeatMedia(ActionEvent event) {
+        if (Objects.isNull(mediaPlayer.getOnEndOfMedia())) {
+            mediaPlayer.setOnEndOfMedia(() ->
+            {
+                mediaPlayer.seek(Duration.ZERO);
+                mediaPlayer.play();
+            });
+        } else {
+            mediaPlayer.setOnEndOfMedia(null);
+        }
+    }
+
+    @FXML
     private void slowPlayMedia(ActionEvent event) {
         mediaPlayer.setRate(0.75);
     }
@@ -65,8 +79,13 @@ public class Controller {
     }
 
     @FXML
+    private void normalSpeedPlayMedia(ActionEvent event) {
+        mediaPlayer.setRate(1);
+    }
+
+    @FXML
     private void fastPlayMedia(ActionEvent event) {
-        mediaPlayer.setRate(1.5);
+        mediaPlayer.setRate(1.3);
     }
 
     @FXML

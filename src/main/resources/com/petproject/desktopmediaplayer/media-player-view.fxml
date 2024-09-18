@@ -14,8 +14,10 @@
                         <Button mnemonicParsing="false" onAction="#playMedia" text="Play" textFill="#14d42d" />
                         <Button mnemonicParsing="false" onAction="#pauseMedia" text="Pause" textFill="#e70b0b" />
                         <Button mnemonicParsing="false" onAction="#stopMedia" text="Stop" />
+                        <Button mnemonicParsing="false" onAction="#repeatMedia" text="Repeat" textFill="#23ae79" />
                         <Button mnemonicParsing="false" onAction="#verySlowPlayMedia" text="&lt;&lt;&lt;" textFill="#26b6c9" />
                         <Button mnemonicParsing="false" onAction="#slowPlayMedia" text="&lt;&lt;" textFill="#31a49a" />
+                        <Button mnemonicParsing="false" onAction="#normalSpeedPlayMedia" text="Normal Speed" textFill="#22c138" />
                         <Button mnemonicParsing="false" onAction="#fastPlayMedia" text="&gt;&gt;" textFill="#9a07ef" />
                         <Button mnemonicParsing="false" onAction="#veryFastPlayMedia" text="&gt;&gt;&gt;" textFill="#8811dc" />
                         <Button mnemonicParsing="false" onAction="#exitMedia" text="Exit" />
