@@ -30,7 +30,52 @@ public class Controller {
             Media media = new Media(filePath);
             mediaPlayer = new MediaPlayer(media);
             mediaView.setMediaPlayer(mediaPlayer);
+
+            mediaView.setFitHeight(400);
+            mediaView.setFitWidth(350);
+
+
             mediaPlayer.play();
         }
+    }
+
+    @FXML
+    private void playMedia(ActionEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    private void stopMedia(ActionEvent event) {
+        mediaPlayer.stop();
+    }
+
+    @FXML
+    private void pauseMedia(ActionEvent event) {
+        mediaPlayer.pause();
+    }
+
+    @FXML
+    private void slowPlayMedia(ActionEvent event) {
+        mediaPlayer.setRate(0.75);
+    }
+
+    @FXML
+    private void verySlowPlayMedia(ActionEvent event) {
+        mediaPlayer.setRate(0.4);
+    }
+
+    @FXML
+    private void fastPlayMedia(ActionEvent event) {
+        mediaPlayer.setRate(1.5);
+    }
+
+    @FXML
+    private void veryFastPlayMedia(ActionEvent event) {
+        mediaPlayer.setRate(2);
+    }
+
+    @FXML
+    private void exitMedia(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }
