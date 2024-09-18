@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.petproject.desktopmediaplayer.Controller">
     <bottom>
@@ -10,17 +12,46 @@
             <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#handleButtonAction" text="Open" textFill="#1238df" />
-                        <Button mnemonicParsing="false" onAction="#playMedia" text="Play" textFill="#14d42d" />
-                        <Button mnemonicParsing="false" onAction="#pauseMedia" text="Pause" textFill="#e70b0b" />
-                        <Button mnemonicParsing="false" onAction="#stopMedia" text="Stop" />
-                        <Button mnemonicParsing="false" onAction="#repeatMedia" text="Repeat" textFill="#23ae79" />
-                        <Button mnemonicParsing="false" onAction="#verySlowPlayMedia" text="&lt;&lt;&lt;" textFill="#26b6c9" />
-                        <Button mnemonicParsing="false" onAction="#slowPlayMedia" text="&lt;&lt;" textFill="#31a49a" />
-                        <Button mnemonicParsing="false" onAction="#normalSpeedPlayMedia" text="Normal Speed" textFill="#22c138" />
-                        <Button mnemonicParsing="false" onAction="#fastPlayMedia" text="&gt;&gt;" textFill="#9a07ef" />
-                        <Button mnemonicParsing="false" onAction="#veryFastPlayMedia" text="&gt;&gt;&gt;" textFill="#8811dc" />
-                        <Button mnemonicParsing="false" onAction="#exitMedia" text="Exit" />
+                        <Button mnemonicParsing="false" onAction="#handleButtonAction" text="Open" textFill="#1238df">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#playMedia" text="Play" textFill="#14d92b">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#pauseMedia" text="Pause" textFill="#e70b0b">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#stopMedia" text="Stop">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#repeatMedia" text="Repeat" textFill="#25d792">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#verySlowPlayMedia" text="&lt;&lt;&lt;" textFill="#26b6c9">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#slowPlayMedia" text="&lt;&lt;" textFill="#31a49a">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#fastPlayMedia" text="&gt;&gt;" textFill="#9a07ef">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#veryFastPlayMedia" text="&gt;&gt;&gt;" textFill="#8811dc">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                        <Button mnemonicParsing="false" onAction="#exitMedia" text="Exit">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
                     </children>
                 </HBox>
             </children>
@@ -30,6 +61,9 @@
         <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
                 <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+            <Slider fx:id="volumeSlider" orientation="VERTICAL" StackPane.alignment="CENTER_RIGHT" />
+            <Slider fx:id="scenesSlider" StackPane.alignment="BOTTOM_CENTER" />
+            <AmbientLight color="CHARTREUSE" lightOn="true" />
             </children>
         </StackPane>
     </center>

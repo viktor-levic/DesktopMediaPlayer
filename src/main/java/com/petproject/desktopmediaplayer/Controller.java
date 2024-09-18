@@ -1,7 +1,12 @@
 package com.petproject.desktopmediaplayer;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -16,6 +21,12 @@ public class Controller {
 
     @FXML
     private MediaView mediaView;
+
+    @FXML
+    private Slider volumeSlider;
+
+    @FXML
+    private Slider scenesSlider;
 
     @FXML // метод буде прив'язуватися під sample.fxml файлику
     private void handleButtonAction(ActionEvent event) {
@@ -35,6 +46,20 @@ public class Controller {
             mediaView.setFitHeight(700);
             mediaView.setFitWidth(700);
 
+            volumeSlider.setValue(mediaPlayer.getVolume() * 100);
+            volumeSlider.valueProperty().addListener(new InvalidationListener() {
+                @Override
+                public void invalidated(Observable observable) {
+                    mediaPlayer.setVolume(volumeSlider.getValue() / 100);
+                }
+            });
+
+            scenesSlider.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    mediaPlayer.seek(Duration.seconds(scenesSlider.getValue()));
+                }
+            });
 
             mediaPlayer.play();
         }
@@ -43,6 +68,7 @@ public class Controller {
     @FXML
     private void playMedia(ActionEvent event) {
         mediaPlayer.play();
+        mediaPlayer.setRate(1);
     }
 
     @FXML
@@ -76,11 +102,6 @@ public class Controller {
     @FXML
     private void verySlowPlayMedia(ActionEvent event) {
         mediaPlayer.setRate(0.4);
-    }
-
-    @FXML
-    private void normalSpeedPlayMedia(ActionEvent event) {
-        mediaPlayer.setRate(1);
     }
 
     @FXML

@@ -11,6 +11,11 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("media-player-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1450, 800);
+        scene.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                stage.setFullScreen(true);
+            }
+        });
         stage.setTitle("Media Player");
         stage.setScene(scene);
         stage.show();
