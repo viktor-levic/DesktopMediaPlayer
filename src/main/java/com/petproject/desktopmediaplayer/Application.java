@@ -18,7 +18,7 @@ public class Application extends javafx.application.Application {
             }
         });
         stage.setTitle("Media Player");
-        stage.setScene(scene);
+        stage.setScene(scene) ;
         stage.show();
 
 
